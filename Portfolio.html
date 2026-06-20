@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – Alex Johnson</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', sans-serif; background: #0f0f13; color: #e2e8f0; }
+
+    header {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: radial-gradient(ellipse at 60% 40%, #1a1a2e 0%, #0f0f13 70%);
+      text-align: center; padding: 40px 20px;
+      position: relative;
+    }
+    .tag { color: #a78bfa; font-size: 0.9rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 16px; }
+    header h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); font-weight: 800; line-height: 1.1; }
+    header h1 span { color: #a78bfa; }
+    header p { margin-top: 20px; color: #94a3b8; max-width: 500px; line-height: 1.7; }
+    .cta-btn {
+      margin-top: 36px; background: #a78bfa; color: #0f0f13;
+      padding: 14px 36px; border-radius: 40px;
+      text-decoration: none; font-weight: 700; font-size: 0.95rem;
+      display: inline-block; transition: transform 0.2s;
+    }
+    .cta-btn:hover { transform: translateY(-2px); }
+
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(15,15,19,0.92); backdrop-filter: blur(10px);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 40px; z-index: 100;
+    }
+    .logo { color: #a78bfa; font-weight: 800; font-size: 1.2rem; }
+    .nav-links { display: flex; gap: 28px; }
+    .nav-links a { color: #94a3b8; text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: #a78bfa; }
+
+    section { padding: 80px 20px; max-width: 1000px; margin: 0 auto; }
+    .section-title {
+      font-size: 1.8rem; font-weight: 700; margin-bottom: 40px;
+      position: relative; display: inline-block;
+    }
+    .section-title::after {
+      content: ''; position: absolute; bottom: -8px; left: 0;
+      width: 40px; height: 3px; background: #a78bfa; border-radius: 2px;
+    }
+
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; }
+    .project-card {
+      background: #1a1a2e; border-radius: 12px; overflow: hidden;
+      border: 1px solid #2d2d44; transition: border-color 0.2s, transform 0.2s;
+    }
+    .project-card:hover { border-color: #a78bfa; transform: translateY(-4px); }
+    .card-thumb {
+      height: 160px; display: flex; align-items: center; justify-content: center;
+      font-size: 48px;
+    }
+    .card-thumb.c1 { background: linear-gradient(135deg, #1e1b4b, #312e81); }
+    .card-thumb.c2 { background: linear-gradient(135deg, #1a1a2e, #2d1b69); }
+    .card-thumb.c3 { background: linear-gradient(135deg, #0d1b2a, #1a2744); }
+    .card-body { padding: 20px; }
+    .card-body h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+    .card-body p { color: #94a3b8; font-size: 0.875rem; line-height: 1.6; }
+    .card-tags { display: flex; gap: 8px; margin-top: 14px; flex-wrap: wrap; }
+    .card-tag { background: #2d2d44; color: #a78bfa; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; }
+
+    .skills-wrap { display: flex; flex-wrap: wrap; gap: 16px; }
+    .skill-block { background: #1a1a2e; border: 1px solid #2d2d44; padding: 16px 24px; border-radius: 10px; }
+    .skill-block h4 { color: #a78bfa; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+    .skill-block p { color: #e2e8f0; font-weight: 600; }
+
+    footer { background: #1a1a2e; text-align: center; padding: 28px; color: #64748b; font-size: 0.85rem; }
+
+    @media (max-width: 600px) {
+      nav { padding: 14px 20px; }
+      .nav-links { gap: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">AJ.</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<header>
+  <div class="tag">Web Developer & Designer</div>
+  <h1>Hi, I'm <span>Alex Johnson</span></h1>
+  <p>I build clean, functional websites and love turning ideas into beautiful digital experiences.</p>
+  <a href="#projects" class="cta-btn">View My Work</a>
+</header>
+
+<section id="projects">
+  <div class="section-title">Projects</div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="card-thumb c1">🌐</div>
+      <div class="card-body">
+        <h3>Personal Blog</h3>
+        <p>A fully responsive blog built with HTML & CSS with clean reading experience.</p>
+        <div class="card-tags"><span class="card-tag">HTML</span><span class="card-tag">CSS</span></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="card-thumb c2">🛒</div>
+      <div class="card-body">
+        <h3>Product Landing Page</h3>
+        <p>Landing page with hero section, features, and call-to-action for a product.</p>
+        <div class="card-tags"><span class="card-tag">HTML</span><span class="card-tag">CSS</span></div>
+      </div>
+    </div>
+    <div class="project-card">
+      <div class="card-thumb c3">📷</div>
+      <div class="card-body">
+        <h3>Photo Gallery</h3>
+        <p>Responsive CSS grid gallery with hover effects and caption overlays.</p>
+        <div class="card-tags"><span class="card-tag">HTML</span><span class="card-tag">CSS Grid</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="section-title">Skills</div>
+  <div class="skills-wrap">
+    <div class="skill-block"><h4>Language</h4><p>HTML5</p></div>
+    <div class="skill-block"><h4>Styling</h4><p>CSS3</p></div>
+    <div class="skill-block"><h4>Design</h4><p>Responsive UI</p></div>
+    <div class="skill-block"><h4>Tool</h4><p>VS Code</p></div>
+    <div class="skill-block"><h4>Version Control</h4><p>Git & GitHub</p></div>
+    <div class="skill-block"><h4>Framework</h4><p>Bootstrap</p></div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-title">Contact</div>
+  <p style="color:#94a3b8; margin-bottom:16px;">Want to work together? Drop me a message.</p>
+  <p style="color:#a78bfa; font-size:1.1rem;">📧 alex.johnson@email.com</p>
+  <p style="color:#a78bfa; font-size:1.1rem; margin-top:8px;">📞 +1 234 567 8901</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 Alex Johnson · Portfolio Website</p>
+</footer>
+
+</body>
+</html>
